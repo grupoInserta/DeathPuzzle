@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{51CF2C7D-863F-E68B-E35F-A1BDDAEBA434}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ilumisoft.RadarSystem", "Ilumisoft.RadarSystem.csproj", "{7FB95A85-8422-6BFD-A87D-33EA1CFE2D8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{C36C55EB-EB56-119D-A8A4-636276B2A014}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51CF2C7D-863F-E68B-E35F-A1BDDAEBA434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51CF2C7D-863F-E68B-E35F-A1BDDAEBA434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51CF2C7D-863F-E68B-E35F-A1BDDAEBA434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51CF2C7D-863F-E68B-E35F-A1BDDAEBA434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FB95A85-8422-6BFD-A87D-33EA1CFE2D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FB95A85-8422-6BFD-A87D-33EA1CFE2D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FB95A85-8422-6BFD-A87D-33EA1CFE2D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FB95A85-8422-6BFD-A87D-33EA1CFE2D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C36C55EB-EB56-119D-A8A4-636276B2A014}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C36C55EB-EB56-119D-A8A4-636276B2A014}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C36C55EB-EB56-119D-A8A4-636276B2A014}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C36C55EB-EB56-119D-A8A4-636276B2A014}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
