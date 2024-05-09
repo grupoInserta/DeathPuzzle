@@ -374,6 +374,7 @@
 "Assets/Minimalist/Map Builder/Scripts/Map Builder/MapBuilder.cs"
 "Assets/Minimalist/Map Builder/Scripts/Sample Scene/CameraBhv.cs"
 "Assets/Minimalist/Map Builder/Scripts/Sample Scene/DirectionalLightBhv.cs"
+"Assets/Scripts/PlayerController.cs"
 -langversion:9.0
 
 /deterministic
