@@ -66,6 +66,7 @@
     <Compile Include="Assets\Minimalist\Map Builder\Scripts\Sample Scene\CameraBhv.cs" />
     <Compile Include="Assets\DungeonMap\Scripts\DungeonMap\Constants\RoomState.cs" />
     <Compile Include="Assets\DungeonMap\Scripts\DungeonMap\Renderers\IDungeonMapRenderer.cs" />
+    <Compile Include="Assets\Scripts\miCamara.cs" />
     <Compile Include="Assets\DungeonMap\Scripts\DungeonMap\DMCamera.cs" />
     <Compile Include="Assets\DungeonMap\Scripts\DungeonMap\Renderers\Road\DMRoadDiscreteRenderer.cs" />
     <Compile Include="Assets\Minimalist\Map Builder\Scripts\Map Builder\EditModeInstanceBhv.cs" />
@@ -935,6 +936,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
       <Private>False</Private>
@@ -997,6 +1002,10 @@
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
