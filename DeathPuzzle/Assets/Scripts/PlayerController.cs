@@ -12,12 +12,12 @@ public class PlayerController : MonoBehaviour
     private float currentVelocity;
     private float currentSpeed;
     private float speedVelocity;
-    [SerializeField]
+   // [SerializeField]
     private Transform cameratransform;
     // Start is called before the first frame update
     void Start()
     {
-        // cameratransform = Camera.main.transform;
+         cameratransform = Camera.main.transform;
         Debug.Log("hola");
     }
 

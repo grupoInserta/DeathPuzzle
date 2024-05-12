@@ -10,7 +10,7 @@ public class miCamara : MonoBehaviour
 
     public float Yaxis;
     public float Xaxis;
-    public float RotationSensitivity = 4f;
+    public float RotationSensitivity = 8f;
 
     public Transform target;
     Vector3 targetRotation;
