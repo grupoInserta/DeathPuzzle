@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3123530536694667386}
   - component: {fileID: 7718551617534856518}
+  - component: {fileID: 1686497076666766888}
   m_Layer: 0
   m_Name: PlayerMale
   m_TagString: Untagged
@@ -49,7 +50,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 5
   smoothRotationTime: 0.12
-  cameratransform: {fileID: 0}
+--- !u!136 &1686497076666766888
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3846426852363156162}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.993817
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.015195191, z: 0}
 --- !u!1 &8128996766030544160
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,8 +117,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.2830189, g: 0.26676956, b: 0.10768954, a: 1}
-  m_Intensity: 1
-  m_Range: 5.91
+  m_Intensity: 2.15
+  m_Range: 8.27
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -160,7 +183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5652350114380684843
 Transform:
   m_ObjectHideFlags: 0
@@ -188,9 +211,9 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9622642, g: 0.9359299, b: 0.47508007, a: 1}
-  m_Intensity: 15.9
-  m_Range: 8.96
-  m_SpotAngle: 59
+  m_Intensity: 15.75
+  m_Range: 6.64
+  m_SpotAngle: 68
   m_InnerSpotAngle: 2
   m_CookieSize: 10
   m_Shadows:
