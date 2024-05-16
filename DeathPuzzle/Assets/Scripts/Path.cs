@@ -19,6 +19,8 @@ public class Path : MonoBehaviour
     public void parar()
     {
         this.enabled = false;
+        parado = true;
+       
     }
 
     public void andar()

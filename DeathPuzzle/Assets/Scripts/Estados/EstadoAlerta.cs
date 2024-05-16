@@ -36,6 +36,7 @@ public class EstadoAlerta : Estado
 
         if (controladorVision.puedeVerAlJugador(out hit))//Si ve al jugador se activa el estado de persecución, si nomandamos un segundo parametro mirar al jugador es false
         {
+            Debug.Log("jugador detectado");
             controladorNavMesh.Objetivo = hit.transform;//Devuelve la posición del jugador
             maquinaDeEstados.ActivarEstado(maquinaDeEstados.estadoPersecucion);
             return;//Volvemos sin seguir debugando el método
