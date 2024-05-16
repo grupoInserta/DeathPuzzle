@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private float speedVelocity;
     private float playerSize = 2f;
     private Vector3 moveDir;
+    public LayerMask layerMask;
     // [SerializeField]
     private Transform cameratransform;
     // Start is called before the first frame update
@@ -40,13 +41,14 @@ public class PlayerController : MonoBehaviour
         float targetSpeed = MoveSpeed * moveDir.magnitude;
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedVelocity, 0.12f);
         RaycastHit hitInfo;
-        bool canMove = ! Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), playerSize);
-       // bool canMove = !Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitInfo, playerSize);
-        //GameObject hitObject = hitInfo.collider.gameObject;
-        //Debug.Log(hitObject.CompareTag("Jugador"));
-
-
-  
+        bool canMove = ! Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitInfo, playerSize);
+        if (hitInfo.collider != null)
+        {
+            if (hitInfo.collider.gameObject.CompareTag("Enemy"))
+            {
+                canMove = true;
+            }
+        }
         
         if (canMove)
         {
