@@ -50,6 +50,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 5
   smoothRotationTime: 0.12
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!136 &1686497076666766888
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -65,12 +68,12 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1.993817
+  m_Radius: 0.61
+  m_Height: 2.03
   m_Direction: 1
   m_Center: {x: 0, y: -0.015195191, z: 0}
 --- !u!1 &8128996766030544160

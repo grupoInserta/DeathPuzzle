@@ -16,9 +16,9 @@ public class Enemigo : MonoBehaviour
         ScriptPath = gameObject.GetComponent("Path") as Path;// del propio enemigo
         maquinaDeEstados = gameObject.GetComponent("MaquinaDeEstados") as MaquinaDeEstados;
         ScriptPath.parar();
-    }
-    private void OnTriggerEnter(Collider other)
-    {        
+
+      }
+    private void OnTriggerEnter(Collider other)  {        
         if (other.gameObject.CompareTag("Jugador"))
         {           
             detectadoJugador = true;
