@@ -42,17 +42,32 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));       
 
         Vector2 inputVector = input.normalized;
-
+       
         moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
 
         float rotation = Mathf.Atan2(moveDir.x, moveDir.y) * Mathf.Rad2Deg + cameratransform.eulerAngles.y;
         transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, rotation, ref currentVelocity, smoothRotationTime);
 
-        float targetSpeed = MoveSpeed * moveDir.magnitude;
+
+        //float targetSpeed = MoveSpeed * moveDir.magnitude; 
+        float targetSpeed;
+        Debug.Log(moveDir);
+        if(moveDir.z > 0)
+        {
+            targetSpeed = MoveSpeed * moveDir.magnitude;
+        }
+        else
+        {
+            targetSpeed = - MoveSpeed * moveDir.magnitude;
+        }
+
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedVelocity, 0.12f);
+       
+    
+
         RaycastHit hitInfo;
         bool canMove = !Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitInfo, playerSize);
         if (hitInfo.collider != null)
@@ -65,14 +80,15 @@ public class PlayerController : MonoBehaviour
             {
                 canMove = true;
                 Destroy(hitInfo.collider.gameObject);
-                contadorObjetos++;
-                Debug.Log(contadorObjetos);
+                contadorObjetos++;                
             }
         }
 
         if (canMove)
         {
-            transform.Translate(transform.forward * currentSpeed * Time.deltaTime, Space.World);
+             transform.Translate(transform.forward * currentSpeed * Time.deltaTime, Space.World);
+        
+            
         }
     }
 }
