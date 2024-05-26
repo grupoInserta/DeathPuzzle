@@ -27,6 +27,7 @@ public class EstadoAlerta : Estado
         if (tiempoBuscando >= duracionBusqueda)
         {
             maquinaDeEstados.ActivarEstado(maquinaDeEstados.estadoPatrulla);//Volvemos al estado patrulla si no vemos al jugador en 4 segundos
+            
             tiempoBuscando = 0;
             return;//No hace falta, es sólo por si escribiéramos más código debajo
         }
@@ -36,7 +37,7 @@ public class EstadoAlerta : Estado
 
         if (controladorVision.puedeVerAlJugador(out hit))//Si ve al jugador se activa el estado de persecución, si nomandamos un segundo parametro mirar al jugador es false
         {
-            Debug.Log("jugador detectado");
+            Debug.Log("jugador visto");
             controladorNavMesh.Objetivo = hit.transform;//Devuelve la posición del jugador
             maquinaDeEstados.ActivarEstado(maquinaDeEstados.estadoPersecucion);
             return;//Volvemos sin seguir debugando el método

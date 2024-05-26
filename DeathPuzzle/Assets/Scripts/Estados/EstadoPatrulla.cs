@@ -33,6 +33,11 @@ public class EstadoPatrulla : Estado
         //FIN VER JUGADOR        
     }
 
+    private void OnEnable()
+    {
+        EnemigoScriptPath.andar();
+    }
+
 
     void Update()
     {
