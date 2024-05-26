@@ -5,7 +5,7 @@ using UnityEngine;
 public class EstadoAlerta : Estado
 {
     public float velocidadGiroBusqueda = 120f;//grados por segundo
-    public float duracionBusqueda = 4f;//unidades por segundo
+    public float duracionBusqueda = 8f;//unidades por segundo
     private MaquinaDeEstados maquinaDeEstados;
     private ControladorVision controladorVision;
     private ControladorNavMesh controladorNavMesh;

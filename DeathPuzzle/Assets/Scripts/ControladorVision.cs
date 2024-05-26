@@ -4,9 +4,9 @@ using UnityEngine;
 public class ControladorVision : MonoBehaviour
 
 {
-    public float rangoVision = 20f;//La distancia a la que vamos a lanzar el rayo
+    public float rangoVision = 1000f;//La distancia a la que vamos a lanzar el rayo
     public Transform Ojos;//Desde dónde lanzamos el rayo
-    public Vector3 offset = new Vector3(0f, 1.80f, 0f);//La posición del jugador está en y=0, por eso la subimos, para que ojos pueda ver en paralelo al suelo
+    public Vector3 offset = new Vector3(0f, 0f, 0f);//La posición del jugador está en y=0, por eso la subimos, para que ojos pueda ver en paralelo al suelo
     private ControladorNavMesh controladorNavMesh;
 
     void Start()
@@ -34,9 +34,10 @@ public class ControladorVision : MonoBehaviour
             // forward es un vector en direccion z: new Vector3(0,0.1) del objeto!!
             // Vector3.forward es global   y transform.forward es locoal
         }
+        Debug.DrawRay(gameObject.transform.position, vectorDireccion * 100, Color.green, 0.2f, false);
+        
+        return Physics.Raycast(Ojos.transform.position, vectorDireccion, out hit, rangoVision) && hit.collider.CompareTag("Jugador");
 
-        vectorDireccion = Ojos.forward;
-        return Physics.Raycast(Ojos.position, vectorDireccion, out hit, rangoVision) && hit.collider.CompareTag("Jugador");
         //(origen del rayo, la dirección del rayo, información de dónde ha impactado, distancia máxima && ha colisionado con el jugador)
     }
     /*

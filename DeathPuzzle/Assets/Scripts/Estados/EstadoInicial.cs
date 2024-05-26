@@ -9,6 +9,7 @@ public class EstadoInicial : Estado
     void Start()
     {
         maquinaDeEstados = Enemigo.GetComponent("MaquinaDeEstados") as MaquinaDeEstados;
+        maquinaDeEstados.IniciarPatrulla();
     }
 
     // Update is called once per frame
@@ -17,7 +18,7 @@ public class EstadoInicial : Estado
 
         if (Time.fixedTime == Mathf.Round(4))
         {
-            maquinaDeEstados.IniciarPatrulla();
+           // maquinaDeEstados.IniciarPatrulla();
         }
     }
 }

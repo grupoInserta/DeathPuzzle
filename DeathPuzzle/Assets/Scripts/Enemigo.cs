@@ -22,6 +22,7 @@ public class Enemigo : MonoBehaviour
         if (other.gameObject.CompareTag("Jugador"))
         {           
             detectadoJugador = true;
+            Debug.Log("detecado jugador");
             maquinaDeEstados.alertar();
             ScriptPath.parar();//el Path del enemigo
                                // se para la patrulla 
