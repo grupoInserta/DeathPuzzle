@@ -390,6 +390,7 @@
 "Assets/Scripts/Estados/EstadoPersecucion.cs"
 "Assets/Scripts/MaquinaDeEstados.cs"
 "Assets/Scripts/miCamara.cs"
+"Assets/Scripts/PanelControlador.cs"
 "Assets/Scripts/Path.cs"
 "Assets/Scripts/PlayerController.cs"
 -langversion:9.0

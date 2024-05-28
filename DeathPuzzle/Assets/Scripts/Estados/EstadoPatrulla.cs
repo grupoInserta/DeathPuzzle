@@ -35,7 +35,11 @@ public class EstadoPatrulla : Estado
 
     private void OnEnable()
     {
-        EnemigoScriptPath.andar();
+        if(EnemigoScriptPath != null)
+        {
+            EnemigoScriptPath.andar();
+        }
+        
     }
 
 

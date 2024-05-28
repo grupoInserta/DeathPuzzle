@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     [SerializeField]
     public float MoveSpeed = 5f;
     [SerializeField]
@@ -14,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private float speedVelocity;
     private float playerSize = 2f;
     private Vector3 moveDir;
+    private int numObjetosRestantes = -1;
     public LayerMask layerMask;
     private int contadorObjetos = 0;
     // [SerializeField]
@@ -24,37 +24,42 @@ public class PlayerController : MonoBehaviour
         cameratransform = Camera.main.transform;
 
     }
+    public int obtenerObjetosRecogidos()
+    {
+        return contadorObjetos;
+    }
 
-    /*
+    public void EstablecerNumObjetosFinal()
+    {
+        numObjetosRestantes = 0;
+    }
+
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("hola");
+    
         Debug.Log(other.gameObject.name);
         if (other.gameObject.CompareTag("Objeto"))
         {
             Destroy(other.gameObject);
             contadorObjetos++;
-            Debug.Log(contadorObjetos);
+         
+        } else if (other.gameObject.CompareTag("Salida") && numObjetosRestantes == 0)
+        {
+            Debug.Log("Partida ganada!!!");
         }
     }
-    */
+   
 
     // Update is called once per frame
     void Update()
     {
 
-        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));       
-
-        Vector2 inputVector = input.normalized;
-       
+        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")); 
+        Vector2 inputVector = input.normalized;       
         moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
-
         float rotation = Mathf.Atan2(moveDir.x, moveDir.y) * Mathf.Rad2Deg + cameratransform.eulerAngles.y;
         transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, rotation, ref currentVelocity, smoothRotationTime);
-
-
-        //float targetSpeed = MoveSpeed * moveDir.magnitude; 
         float targetSpeed;
-        Debug.Log(moveDir);
+
         if(moveDir.z > 0)
         {
             targetSpeed = MoveSpeed * moveDir.magnitude;
