@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour
     private int contadorObjetos = 0;
     // [SerializeField]
     private Transform cameratransform;
+
+
+    private CargaEscenas escena;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +49,7 @@ public class PlayerController : MonoBehaviour
         } else if (other.gameObject.CompareTag("Salida") && numObjetosRestantes == 0)
         {
             Debug.Log("Partida ganada!!!");
+            escena.CargarEscenaNombre("Victoria");
         }
     }
    
@@ -79,8 +84,10 @@ public class PlayerController : MonoBehaviour
         {
             if (hitInfo.collider.gameObject.CompareTag("Enemy"))
             {
-                canMove = true;
-                
+                //Si es tocado por el enmigo se vuelve false para no moverlo y quitarlo de la escena
+                canMove = false;
+                Debug.Log("Has perdido");
+                escena.CargarEscenaNombre("Derrota");
             } else if (hitInfo.collider.gameObject.CompareTag("Objeto"))
             {
                 canMove = true;

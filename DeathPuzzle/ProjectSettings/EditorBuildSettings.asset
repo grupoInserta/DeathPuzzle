@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 4c1a3b9189a00cd4ea94b06a7fd04e0b
+  - enabled: 1
+    path: Assets/Scenes/MapGen 1.unity
+    guid: 3dda185430e35db4889bc01bea015d40
+  - enabled: 1
     path: Assets/Scenes/MapGen.unity
     guid: 791584f08662dc444bdc56f253bea401
+  - enabled: 1
+    path: Assets/Scenes/Victoria.unity
+    guid: 11be742143c7db948946f848670f3ba1
   m_configObjects: {}
