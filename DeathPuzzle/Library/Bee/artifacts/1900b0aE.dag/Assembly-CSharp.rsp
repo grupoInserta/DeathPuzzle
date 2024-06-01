@@ -380,6 +380,7 @@
 "Assets/Minimalist/Map Builder/Scripts/Map Builder/MapBuilder.cs"
 "Assets/Minimalist/Map Builder/Scripts/Sample Scene/CameraBhv.cs"
 "Assets/Minimalist/Map Builder/Scripts/Sample Scene/DirectionalLightBhv.cs"
+"Assets/Scripts/CargaEscenas.cs"
 "Assets/Scripts/ControladorNavMesh.cs"
 "Assets/Scripts/ControladorVision.cs"
 "Assets/Scripts/Enemigo.cs"

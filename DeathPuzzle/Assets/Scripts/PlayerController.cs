@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         cameratransform = Camera.main.transform;
+        escena = GetComponent<CargaEscenas>();
     }
     public int obtenerObjetosRecogidos()
     {
@@ -43,11 +44,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
             contadorObjetos++;
-        } else if (other.gameObject.CompareTag("Salida") && numObjetosRestantes == 0)
-        {
-            Debug.Log("Partida ganada!!!");
-            escena.CargarEscenaNombre("Victoria");
-        }
+        } 
     }
 
     // Update is called once per frame
@@ -81,12 +78,20 @@ public class PlayerController : MonoBehaviour
                 canMove = false;
                 Debug.Log("Has perdido");
                 escena.CargarEscenaNombre("Derrota");
-            } else if (hitInfo.collider.gameObject.CompareTag("Objeto"))
+            }
+            else if (hitInfo.collider.gameObject.CompareTag("Objeto"))
             {
                 canMove = true;
                 Destroy(hitInfo.collider.gameObject);
-                contadorObjetos++;                
+                contadorObjetos++;
             }
+            else if (hitInfo.collider.gameObject.CompareTag("Salida") && numObjetosRestantes == 0)
+            {
+                Debug.Log("Partida ganada!!!");
+                escena.CargarEscenaNombre("Victoria");
+
+            }
+           
         }
 
         if (canMove)

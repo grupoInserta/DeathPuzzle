@@ -7,16 +7,20 @@ public class PanelControlador : MonoBehaviour
 {
     [SerializeField] private GameObject[] Objetos;
     [SerializeField] public GameObject Jugador;
+    [SerializeField] public GameObject Enemigo;
     private PlayerController playerControllerScript;
     private TextMeshProUGUI textObjetos;
     private int numObjetos;
+    private CargaEscenas escena;
     // Start is called before the first frame update
     void Start()
     {
         playerControllerScript = Jugador.GetComponent<PlayerController>();
+
         GameObject NumObjetos;
         NumObjetos = transform.GetChild(1).gameObject;
         textObjetos = NumObjetos.GetComponent<TextMeshProUGUI>();
+        escena = Jugador.GetComponent<CargaEscenas>();
         numObjetos = Objetos.Length;
     }
 
@@ -31,5 +35,14 @@ public class PanelControlador : MonoBehaviour
             playerControllerScript.EstablecerNumObjetosFinal();
             textObjetos.text = "Nivel completado!!!";
         }
+        float dist = Vector3.Distance(Jugador.transform.position, Enemigo.transform.position);
+        Debug.Log(dist);
+        if(dist < 1f)
+        {
+            Debug.Log("Partida perdida!!!");
+            escena.CargarEscenaNombre("Derrota");
+        }
+
+      
     }
 }
