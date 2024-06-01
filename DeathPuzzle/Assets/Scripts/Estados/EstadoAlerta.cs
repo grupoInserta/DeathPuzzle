@@ -11,14 +11,12 @@ public class EstadoAlerta : Estado
     private ControladorNavMesh controladorNavMesh;
     private float tiempoBuscando;
 
-
     void Start()
     {
         maquinaDeEstados = GetComponent<MaquinaDeEstados>();
         controladorVision = transform.GetChild(0).GetComponent<ControladorVision>();
         controladorNavMesh = GetComponent<ControladorNavMesh>();
     }
-
 
     void Update()
     {
@@ -32,7 +30,6 @@ public class EstadoAlerta : Estado
             return;//No hace falta, es sólo por si escribiéramos más código debajo
         }
 
-
         RaycastHit hit;
 
         if (controladorVision.puedeVerAlJugador(out hit))//Si ve al jugador se activa el estado de persecución, si nomandamos un segundo parametro mirar al jugador es false
@@ -42,10 +39,7 @@ public class EstadoAlerta : Estado
             maquinaDeEstados.ActivarEstado(maquinaDeEstados.estadoPersecucion);
             return;//Volvemos sin seguir debugando el método
         }
-
-
     }
-
     /*
     void OnEnable()//Cuando se activa el estado de alerta, detenemos al enemigo
     {

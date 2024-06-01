@@ -19,14 +19,12 @@ public class PlayerController : MonoBehaviour
     // [SerializeField]
     private Transform cameratransform;
 
-
     private CargaEscenas escena;
 
     // Start is called before the first frame update
     void Start()
     {
         cameratransform = Camera.main.transform;
-
     }
     public int obtenerObjetosRecogidos()
     {
@@ -45,19 +43,16 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
             contadorObjetos++;
-         
         } else if (other.gameObject.CompareTag("Salida") && numObjetosRestantes == 0)
         {
             Debug.Log("Partida ganada!!!");
             escena.CargarEscenaNombre("Victoria");
         }
     }
-   
 
     // Update is called once per frame
     void Update()
     {
-
         Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")); 
         Vector2 inputVector = input.normalized;       
         moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
@@ -76,8 +71,6 @@ public class PlayerController : MonoBehaviour
 
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedVelocity, 0.12f);
        
-    
-
         RaycastHit hitInfo;
         bool canMove = !Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitInfo, playerSize);
         if (hitInfo.collider != null)
@@ -99,8 +92,6 @@ public class PlayerController : MonoBehaviour
         if (canMove)
         {
              transform.Translate(transform.forward * currentSpeed * Time.deltaTime, Space.World);
-        
-            
         }
     }
 }

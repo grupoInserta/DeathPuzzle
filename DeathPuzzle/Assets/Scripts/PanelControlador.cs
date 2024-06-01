@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-
-
 public class PanelControlador : MonoBehaviour
 {
     [SerializeField] private GameObject[] Objetos;
@@ -20,7 +18,6 @@ public class PanelControlador : MonoBehaviour
         NumObjetos = transform.GetChild(1).gameObject;
         textObjetos = NumObjetos.GetComponent<TextMeshProUGUI>();
         numObjetos = Objetos.Length;
-      
     }
 
     // Update is called once per frame
@@ -34,6 +31,5 @@ public class PanelControlador : MonoBehaviour
             playerControllerScript.EstablecerNumObjetosFinal();
             textObjetos.text = "Nivel completado!!!";
         }
-
     }
 }

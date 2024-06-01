@@ -39,13 +39,10 @@ public class EstadoPatrulla : Estado
         {
             EnemigoScriptPath.andar();
         }
-        
     }
-
 
     void Update()
     {
-
         puntoObjetivo = EnemigoScriptPath.PuntoActivo;
         direccion = (puntoObjetivo.position - transform.position).normalized;
         rotFinal = Quaternion.LookRotation(direccion);
@@ -58,7 +55,5 @@ public class EstadoPatrulla : Estado
             maquinaDeEstados.ActivarEstado(maquinaDeEstados.estadoPersecucion);
             return;//Volvemos sin seguir debugando el método
         }
-
     }
-
 }

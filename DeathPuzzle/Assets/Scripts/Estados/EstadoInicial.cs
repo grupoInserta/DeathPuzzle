@@ -15,7 +15,6 @@ public class EstadoInicial : Estado
     // Update is called once per frame
     void Update()
     {
-
         if (Time.fixedTime == Mathf.Round(4))
         {
            // maquinaDeEstados.IniciarPatrulla();

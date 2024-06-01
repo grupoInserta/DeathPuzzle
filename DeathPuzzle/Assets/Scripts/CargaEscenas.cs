@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class CargaEscenas : MonoBehaviour
 {
-
     [SerializeField]
     public string escena;
     public void CargarEscena()
@@ -23,6 +22,5 @@ public class CargaEscenas : MonoBehaviour
     {
         Debug.Log("Adios");
         Application.Quit();
-
     }
 }

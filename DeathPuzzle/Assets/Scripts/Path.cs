@@ -20,7 +20,6 @@ public class Path : MonoBehaviour
     {
         this.enabled = false;
         parado = true;
-       
     }
 
     public void andar()
@@ -32,7 +31,6 @@ public class Path : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (parado)
         {
             return;
@@ -50,7 +48,5 @@ public class Path : MonoBehaviour
             IndicePuntos = 0;
         }
         PuntoActivo = Puntos[IndicePuntos];
-
     }
-
 }
