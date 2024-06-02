@@ -37,12 +37,11 @@ public class PanelControlador : MonoBehaviour
         }
         float dist = Vector3.Distance(Jugador.transform.position, Enemigo.transform.position);
         Debug.Log(dist);
-        if(dist < 1f)
+        if(dist < 0.01f && Jugador.transform.position == Enemigo.transform.position)
         {
             Debug.Log("Partida perdida!!!");
             escena.CargarEscenaNombre("Derrota");
         }
 
-      
     }
 }
