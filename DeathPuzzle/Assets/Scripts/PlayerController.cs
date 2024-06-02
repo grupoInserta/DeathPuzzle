@@ -75,11 +75,10 @@ public class PlayerController : MonoBehaviour
             if (hitInfo.collider.gameObject.CompareTag("Enemy"))
             {
                 //Si es tocado por el enmigo se vuelve false para no moverlo y quitarlo de la escena
-                canMove = false;
-                Debug.Log("Has perdido");
-                escena.CargarEscenaNombre("Derrota");
+                canMove = true;
+                
             }
-            else if (hitInfo.collider.gameObject.CompareTag("Objeto"))
+            if (hitInfo.collider.gameObject.CompareTag("Objeto"))
             {
                 canMove = true;
                 Destroy(hitInfo.collider.gameObject);
